@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: josh-test-new
+    namespace: default
+spec:
+    selector:
+        matchLabels:
+            app: josh-test-new
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                app: josh-test-new
+        spec:
+            containers:
+            -   name: josh-test
+                image: helloworld
+                imagePullPolicy: Always
+                resources:
+                    limits:
+                        cpu: 100m
+                    requests:
+                        cpu: 50m

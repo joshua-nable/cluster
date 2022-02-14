@@ -1,0 +1,31 @@
+apiversion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: exclude-namespace-names
+  annotations:
+      As application workloads share cluster resources, it is important to limit resources 
+      requested and consumed by each pod. It is recommended to require 'resources.requests' 
+      and 'resources.limits.memory' per pod. If a namespace level request or limit is specified, 
+      defaults will automatically be applied to each pod based on the 'LimitRange' configuration.      
+spec:
+  validationFailureAction: enforce
+  rules:
+  - name: exclude-namespace-names
+  match:
+    resources:
+      kinds:
+      - namespace
+    validate:
+    message: "You cannot have that namespace name, please select another one"
+    pattern:
+      spec:
+        rules:
+          name: exclude-namespace-names
+          match:
+            resources:
+              kinds:
+              - Pod
+          exclude:
+            resources:
+              namespaces:
+              - "josh"

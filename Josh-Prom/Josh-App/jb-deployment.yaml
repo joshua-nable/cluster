@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: josh-test
+    namespace: josh
+spec:
+    selector:
+        matchLabels:
+            app: josh-test
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                app: josh-test
+        spec:
+            containers:
+            -   name: josh-test
+                image: elrosvirtual/josh-test:10
+                imagePullPolicy: Always
+                resources:
+                    limits:
+                        cpu: 100m
+                    requests:
+                        cpu: 50m
