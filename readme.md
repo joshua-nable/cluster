@@ -35,4 +35,4 @@ kubectl port-forward -n *past it here* 9090:9090
 
 localhost:9090 in your browser to access it.
 
-Grafana?
+https://grafana.com/docs/grafana/latest/installation/
