@@ -1,0 +1,35 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- controller/configmap-kyverno-metrics.yaml
+- controller/configmap-kyverno.yaml
+- controller/deployment-kyverno.yaml
+- controller/namespace-kyverno.yaml
+- controller/poddisruptionbudget-kyverno.yaml
+- controller/service-kyverno-svc-metrics.yaml
+- controller/service-kyverno-svc.yaml
+- crds/customresourcedefinition-clusterpolicies.kyverno.io.yaml
+- crds/customresourcedefinition-clusterpolicyreports.wgpolicyk8s.io.yaml
+- crds/customresourcedefinition-clusterreportchangerequests.kyverno.io.yaml
+- crds/customresourcedefinition-generaterequests.kyverno.io.yaml
+- crds/customresourcedefinition-policies.kyverno.io.yaml
+- crds/customresourcedefinition-policyreports.wgpolicyk8s.io.yaml
+- crds/customresourcedefinition-reportchangerequests.kyverno.io.yaml
+- rbac/clusterrole-kyverno:admin-policies.yaml
+- rbac/clusterrole-kyverno:admin-policyreport.yaml
+- rbac/clusterrole-kyverno:admin-reportchangerequest.yaml
+- rbac/clusterrole-kyverno:customresources.yaml
+- rbac/clusterrole-kyverno:generatecontroller.yaml
+- rbac/clusterrole-kyverno:leaderelection.yaml
+- rbac/clusterrole-kyverno:policycontroller.yaml
+- rbac/clusterrole-kyverno:userinfo.yaml
+- rbac/clusterrole-kyverno:webhook.yaml
+- rbac/clusterrolebinding-kyverno:customresources.yaml
+- rbac/clusterrolebinding-kyverno:generatecontroller.yaml
+- rbac/clusterrolebinding-kyverno:leaderelection.yaml
+- rbac/clusterrolebinding-kyverno:policycontroller.yaml
+- rbac/clusterrolebinding-kyverno:userinfo.yaml
+- rbac/clusterrolebinding-kyverno:webhook.yaml
+- rbac/serviceaccount-kyverno-service-account.yaml
+

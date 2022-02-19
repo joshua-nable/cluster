@@ -1,0 +1,82 @@
+No resources found in appoptics namespace.
+No resources found in autodev-continuity-data-pipelines namespace.
+autodev-configuration-service-pdb   1               N/A               0                     366d
+autodev-configuration-service-pdb   1               N/A               0                     366d
+autodev-configuration-service-pdb   1               N/A               0                     366d
+No resources found in cert-manager namespace.
+No resources found in cert-manager namespace.
+No resources found in cert-manager namespace.
+No resources found in cluster-autoscaler namespace.
+No resources found in default namespace.
+No resources found in default namespace.
+auth-pdb   1               N/A               0                     18d
+apigateway-pdb   1               N/A               0                     365d
+auth-pdb         1               N/A               0                     378d
+apigateway-pdb   1               N/A               0                     367d
+auth-pdb         1               N/A               0                     367d
+No resources found in dev-bcf-conan-index-54768049 namespace.
+No resources found in dev-bison-credex namespace.
+No resources found in dev-c2c-at namespace.
+No resources found in dev-c2c-cb namespace.
+No resources found in dev-c2c-dev namespace.
+No resources found in dev-c2c-front namespace.
+No resources found in dev-c2c-mc namespace.
+No resources found in dev-c2c-t1 namespace.
+No resources found in dev-continuity-data-pipelines namespace.
+No resources found in dev-efimochev-test namespace.
+No resources found in dev-eks-monitoring namespace.
+backup-ffp-pdb   1               N/A               1                     369d
+backup-ffp-pdb   1               N/A               1                     93d
+backup-ffp-pdb   1               N/A               1                     94d
+backup-ffp-pdb   1               N/A               1                     342d
+backup-ffp-pdb   1               N/A               1                     127d
+backup-ffp-pdb   1               N/A               1                     374d
+backup-ffp-pdb   1               N/A               1                     8d
+hds-pdb   1               N/A               0                     19d
+hds-pdb   1               N/A               0                     19d
+hds-pdb   1               N/A               0                     19d
+hds-pdb   1               N/A               0                     19d
+hds-pdb   1               N/A               0                     357d
+hds-pdb   1               N/A               0                     357d
+hds-pdb   1               N/A               0                     357d
+hds-pdb   1               N/A               0                     357d
+hds-pdb   1               N/A               0                     357d
+hds-pdb   1               N/A               1                     384d
+hds-pdb   1               N/A               1                     378d
+hds-pdb   1               N/A               1                     155d
+hds-pdb   1               N/A               1                     352d
+hds-pdb   1               N/A               0                     346d
+No resources found in dev-mail-bin-dev namespace.
+No resources found in dev-mail-continuity-dev namespace.
+No resources found in dev-mail-continuity-dev namespace.
+No resources found in dev-mail-focus namespace.
+No resources found in dev-mail-gaps namespace.
+No resources found in dev-mail-katman namespace.
+No resources found in dev-mail-nb namespace.
+No resources found in dev-mail-nb namespace.
+No resources found in dev-mail-nb namespace.
+No resources found in dev-mail-nb namespace.
+No resources found in dev-mail-plumbing namespace.
+No resources found in dev-mail-vu namespace.
+ncentral-filter-pdb   1               N/A               0                     226d
+router-pdb   1               N/A               0                     226d
+soap-pdb   1               N/A               0                     350d
+No resources found in dev-tsq-amw namespace.
+webcmc-pdb   1               N/A               0                     352d
+No resources found in external-dns namespace.
+No resources found in kube-scan namespace.
+No resources found in kube-system namespace.
+No resources found in kube-system namespace.
+No resources found in kube-system namespace.
+No resources found in sealedsecrets namespace.
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+vault-secrets-webhook   1               N/A               1                     160d
+No resources found in velero namespace.

@@ -1,0 +1,64 @@
+Oyuna Wadsworth
+
+lpm@purplebricks.com
+
+
+Jane - 
+
+
+
+
+
+round(sum(irate(nginx_ingress_controller_requests[1m])))
+
+sum(irate(nginx_ingress_controller_requests[1m]))
+
+rate(nginx_http_requests_total{job=”kubernetes-pods”,namespace=”default”,pod_name=~”ingress-nginx-controller.+”}[1m])
+
+
+
+
+
+kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1/namespaces/ingress-nginx/ingress/apache2/nginx_ingress_controller_requests_rate" | jq .
+
+
+zadanie domowe
+https://ioannesoculus.com/2019/03/09/natural-method-polish-lekcja-1/ 
+https://www.youtube.com/watch?v=bM_uJSaA2mE 
+https://www.youtube.com/watch?v=wSlA1vBJc38 
+
+https://www.youtube.com/watch?v=cW-Yv4uP91c&list=PLKvLJEy0VviTSUKB_4AWEMjFSzkKcJUIy 
+
+
+
+
+prometheus-prometheus-operator-prometheus-0
+prometheus-operator-operator-76c566b8d9-mqlgj
+
+git@github.com:/logicnow/slr-manifests.git/vertical-pod-autoscaler/overlays/stable?ref=v0.4.65
+
+
+
+
+
+
+curl -u alexandr.sokolov@n-able.com:11d***e6a5e10 -X POST "https://pipelines.builtwith.solar/job/BACKUP/job/DEVOPS/job/aws-sf-workflow-c2c/job/master/buildWithParameters?verbosity=high"
+
+
+
+
+
+
+
+5620 -             // "module.slr-eks.module.eks.aws_eks_cluster.this",
+
+
+
+
+1. Clone the repo locally.
+2. CD to the folder in question (Prod/EUCE1)
+3. LS to confirm you can see terraform file
+4. Terraform init
+5. Terraform plan -destroy
+6. Exclude the module in question.
+7. 

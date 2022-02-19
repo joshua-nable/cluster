@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- configmap-kyverno-metrics.yaml
+- configmap-kyverno.yaml
+- deployment-kyverno.yaml
+- namespace-kyverno.yaml
+- poddisruptionbudget-kyverno.yaml
+- service-kyverno-svc-metrics.yaml
+- service-kyverno-svc.yaml

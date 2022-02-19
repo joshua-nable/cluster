@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- clusterrole-kyverno:admin-policies.yaml
+- clusterrole-kyverno:admin-policyreport.yaml
+- clusterrole-kyverno:admin-reportchangerequest.yaml
+- clusterrole-kyverno:customresources.yaml
+- clusterrole-kyverno:generatecontroller.yaml
+- clusterrole-kyverno:leaderelection.yaml
+- clusterrole-kyverno:policycontroller.yaml
+- clusterrole-kyverno:userinfo.yaml
+- clusterrole-kyverno:webhook.yaml
+- clusterrolebinding-kyverno:customresources.yaml
+- clusterrolebinding-kyverno:generatecontroller.yaml
+- clusterrolebinding-kyverno:leaderelection.yaml
+- clusterrolebinding-kyverno:policycontroller.yaml
+- clusterrolebinding-kyverno:userinfo.yaml
+- clusterrolebinding-kyverno:webhook.yaml
+- serviceaccount-kyverno-service-account.yaml
