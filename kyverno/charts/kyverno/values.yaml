@@ -1,6 +1,6 @@
 nameOverride:
 fullnameOverride:
-namespace: kyverno
+namespace:
 
 # -- Additional labels
 customLabels: {}

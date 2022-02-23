@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: josh-test-svc
+    namespace: josh
+spec:
+    selector:
+        app: josh-test
+    ports:
+        - name: http
+          port: 80
+          targetPort: 5000
+          protocol: TCP
