@@ -1,11 +1,15 @@
-# apiVersion: kustomize.config.k8s.io/v1beta1
-# kind: Kustomization
+# Uncomment below kustomize **locally only** to inflate the helm chart using commands:
+# kustomize build . --enable-helm | kubectl-slice -o base/resources -t "{{.kind | lower}}/{{.metadata.name | alphanumdash}}.yaml"
+# cd base && rm kustomization.yaml||true && touch kustomization.yaml && kustomize edit add resource resources/*/*.yaml
+# Must remove cert-manager CRDs (in above command) due to: https://github.com/jenkinsci/kubernetes-operator/issues/696
 
-# resources:
-# - ../base/
-# - overlays/best-practices/disallow_default_namespace/disallow_default_namespace.yaml
-# - overlays/best-practices/disallow_latest_tag/disallow_latest_tag.yaml
-# - overlays/best-practices/require_labels/require_labels.yaml
-# - overlays/best-practices/require_pod_request_limits/require_pod_request_limits.yaml
-# - overlays/best-practices/add_network_policy
-# - overlays/best-practices/add_ns_quota.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+helmCharts:
+  - name: kyverno
+    includeCRDs: true
+    valuesFile: values.yaml
+    releaseName: kyverno
+    namespace: kyverno
+    version: 2.1.0
+    repo: https://kyverno.github.io/kyverno/

@@ -36,3 +36,18 @@ kubectl port-forward -n *past it here* 9090:9090
 localhost:9090 in your browser to access it.
 
 https://grafana.com/docs/grafana/latest/installation/
+
+
+
+** Please be patient while the chart is being deployed **
+
+1. Get the application URL by running these commands:
+    echo "Browse to http://127.0.0.1:8080"
+    kubectl port-forward svc/grafana 8080:3000 &
+
+2. Get the admin credentials:
+
+echo "User: admin"
+echo "Password: $(kubectl get secret grafana-admin --namespace grafana -o jsonpath="{.data.GF_SECURITY_ADMIN_PASSWORD}" | base64 --decode)"
+joshua@JBROWN-MB cluster % helm repo search                                                                     
+
