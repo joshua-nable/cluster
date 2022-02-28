@@ -1,0 +1,12 @@
+namespace: forge
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../base
+- policies/disallow_default_namespace.yaml
+
+# patchesStrategicMerge:
+
+# - patches/replicaset.yaml

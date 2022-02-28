@@ -1,0 +1,25 @@
+# Uncomment below kustomize **locally only** to inflate the helm chart using commands:
+# kustomize build . --enable-helm | kubectl-slice -o base/resources -t "{{.kind | lower}}/{{.metadata.name | alphanumdash}}.yaml"
+# cd base && rm kustomization.yaml||true && touch kustomization.yaml && kustomize edit add resource resources/*/*.yaml
+# Must remove cert-manager CRDs (in above command) due to: https://github.com/jenkinsci/kubernetes-operator/issues/696
+
+
+# cat > overlays/patches/namespace.yaml <<EOF
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: forge
+# EOF
+
+# 
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+helmCharts:
+  - name: kyverno
+    includeCRDs: true
+    valuesFile: values.yaml
+    releaseName: forge
+    version: 2.1.0
+    repo: https://kyverno.github.io/kyverno/
+    

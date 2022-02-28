@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../base
+
+# - policies/disallow_default_namespace/disallow_default_namespace.yaml
+# - policies/disallow_latest_tag/disallow_latest_tag.yaml
+# - policies/require_labels/require_labels.yaml
+# - policies/require_pod_requests_limits/require_pod_requests_limits.yaml
+# - policies/add_network_policy.yaml
+# - policies/add_ns_quota.yaml
+
+patchesStrategicMerge:
+
+- patches/replicaset.yaml
