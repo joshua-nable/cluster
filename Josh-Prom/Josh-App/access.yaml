@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kyverno-user
+  namespace: forge
+
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: kyverno-user-full-access
+  namespace: forge
+rules:
+- apiGroups: ["", "extensions", "apps"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["batch"]
+  resources:
+  - jobs
+  - cronjobs
+  verbs: ["*"]
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: kyverno-user-view
+  namespace: forge
+subjects:
+- kind: ServiceAccount
+  name: kyverno-user
+  namespace: forge
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: mynamespace-user-full-access

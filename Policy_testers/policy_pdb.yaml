@@ -1,0 +1,63 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-pdb
+  annotations:
+    policies.kyverno.io/title: Require PodDisruptionBudget
+    policies.kyverno.io/category: Sample
+    policies.kyverno.io/minversion: 1.3.6
+    policies.kyverno.io/subject: Deployment, PodDisruptionBudget
+    policies.kyverno.io/description: >-
+      PodDisruptionBudget resources are useful to ensuring minimum availability
+      is maintained at all times. This policy checks all incoming Deployments
+      to ensure they have a matching, preexisting PodDisruptionBudget.      
+spec:
+  validationFailureAction: enforce
+  # This is what k8s does when kyverno is down - not a best practice, but please don't break the cluster when kyverno is down
+  # failurePolicy: Ignore
+  background: true
+  rules:
+  - name: require-pdb
+    match:
+      resources:
+        kinds:
+        - Deployment
+    context:
+    - name: pdb_count
+      apiCall:
+        urlPath: "/apis/policy/v1beta1/namespaces/{{request.namespace}}/poddisruptionbudgets"
+        jmesPath: "items[?label_match(spec.selector.matchLabels, `{{request.object.spec.template.metadata.labels}}`)] | length(@)"
+    validate:
+      message: "There is no corresponding PodDisruptionBudget found for this Deployment."
+      deny:
+        conditions:
+        - key: "{{pdb_count}}"
+          operator: LessThan
+          value: 1
+  - name: require-max-unavailable-not-zero
+    match:
+      resources:
+        kinds:
+        - PodDisruptionBudget
+    validate:
+      message: "PodDisruptionBudget maxUnavailable, if specified, may not be 0"
+      pattern:
+        spec:
+          =(allowedDisruptions): ">0"
+  - name: require-voluntary-disruptions
+    match:
+      resources:
+        kinds:
+        - Deployment
+    context:
+    - name: pdb_minAvailable
+      apiCall:
+        urlPath: "/apis/policy/v1beta1/namespaces/{{request.namespace}}/poddisruptionbudgets"
+        jmesPath: "items[?label_match(spec.selector.matchLabels, `{{request.object.spec.template.metadata.labels}}`)].spec.minAvailable"
+    validate:
+      message: "Deployment replica count ({{ request.object.spec.replicas }}) cannot be lower than or equal to the PodDisruptionBudget minAvailable ({{ pdb_minAvailable[0] }})"
+      deny:
+        conditions:
+        - key: "{{ request.object.spec.replicas }}"
+          operator: LessThanOrEquals
+          value: "{{ pdb_minAvailable[0] }}"

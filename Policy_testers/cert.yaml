@@ -1,0 +1,9 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: acme-crt
+  issuerRef: cert-manager
+spec:
+  secretName: acme-crt-secret
+  dnsNames:
+  

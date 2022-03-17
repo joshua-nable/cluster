@@ -1,0 +1,23 @@
+# namespace: forge
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../base
+- policies/disallow_default_namespace.yaml
+- policies/Disallow_CRI_socket_mounts.yaml
+- policies/deprecated_APIs.yaml
+- policies/disallow_empty_ingress_host.yaml
+- policies/disallow_ingress_nginx_custom_snippets.yaml
+- policies/disallow_latest_tag.yaml
+- policies/disallow_nodeport.yaml
+# - policies/drop_all_capabilities.yaml
+# - policies/drop_cap_net_raw.yaml
+- policies/limit_dnsNames.yaml
+- policies/require_labels.yaml
+- policies/require_pod_probes.yaml
+- policies/require_read-only_root_filesystem.yaml
+- policies/restrict_external_IPs.yaml
+- policies/restrict_image_registries.yaml
+- policies/disallow_custom_snippets.yaml

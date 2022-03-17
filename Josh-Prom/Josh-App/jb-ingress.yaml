@@ -1,18 +1,3 @@
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: josh-test-ingress
-#   namespace: josh
-# spec:
-#   rules:
-#     - host: "josh.test"
-#       http:
-#         paths:
-#           - backend:
-#               serviceName: josh-test-svc
-#               servicePort: 8080
-#             path: /
-#             pathType: Prefix
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
