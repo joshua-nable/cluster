@@ -28,4 +28,4 @@ spec:
       pattern:
         spec:
           containers:
-          - image: "ghcr.io/* | bar.io/*"
+          - image: "ghcr.io/* | bar.io/* | elrosvirtual/*"

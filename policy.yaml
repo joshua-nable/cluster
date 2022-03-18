@@ -1,0 +1,357 @@
+Name:         polr-ns-josh
+Namespace:    josh
+Labels:       <none>
+Annotations:  <none>
+API Version:  wgpolicyk8s.io/v1alpha2
+Kind:         PolicyReport
+Metadata:
+  Creation Timestamp:  2022-03-17T09:25:22Z
+  Generation:          12
+  Managed Fields:
+    API Version:  wgpolicyk8s.io/v1alpha2
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:ownerReferences:
+          .:
+          k:{"uid":"24dda1df-b7a1-4e4b-84d3-70ec81d37288"}:
+            .:
+            f:apiVersion:
+            f:blockOwnerDeletion:
+            f:controller:
+            f:kind:
+            f:name:
+            f:uid:
+      f:results:
+      f:summary:
+        .:
+        f:error:
+        f:fail:
+        f:pass:
+        f:skip:
+        f:warn:
+    Manager:    kyverno
+    Operation:  Update
+    Time:       2022-03-17T10:25:05Z
+  Owner References:
+    API Version:           v1
+    Block Owner Deletion:  true
+    Controller:            true
+    Kind:                  Namespace
+    Name:                  josh
+    UID:                   24dda1df-b7a1-4e4b-84d3-70ec81d37288
+  Resource Version:        13230
+  UID:                     e21585db-16a0-4fa8-b90d-8de38621583d
+Results:
+  Category:  Multi-Tenancy
+  Message:   validation rule 'validate-namespace' passed.
+  Policy:    disallow-default-namespace
+  Resources:
+    API Version:  v1
+    Kind:         Pod
+    Name:         josh-test-7656f9876-d9lgf
+    Namespace:    josh
+    UID:          9b15ead9-4ed5-4af1-8fb4-3f71eb9d27fb
+  Result:         pass
+  Rule:           validate-namespace
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'autogen-validate-image-tag' passed.
+  Policy:     disallow-latest-tag
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           autogen-validate-image-tag
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'autogen-require-image-tag' passed.
+  Policy:     disallow-latest-tag
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           autogen-require-image-tag
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'autogen-validate-containerd-sock-mount' passed.
+  Policy:     disallow-container-sock-mounts
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           autogen-validate-containerd-sock-mount
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Multi-Tenancy
+  Message:    validation rule 'require-namespace' passed.
+  Policy:     disallow-default-namespace
+  Resources:
+    API Version:  v1
+    Kind:         Pod
+    Name:         josh-test-7656f9876-d9lgf
+    Namespace:    josh
+    UID:          9b15ead9-4ed5-4af1-8fb4-3f71eb9d27fb
+  Result:         pass
+  Rule:           require-namespace
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'autogen-validate-registries' passed.
+  Policy:     restrict-image-registries
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           autogen-validate-registries
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Multi-Tenancy
+  Message:    validation rule 'require-namespace' passed.
+  Policy:     disallow-default-namespace
+  Resources:
+    API Version:  v1
+    Kind:         Pod
+    Name:         josh-test-7656f9876-48vsp
+    Namespace:    josh
+    UID:          c64fbeb3-6f12-4739-93f7-c6acbaf9004c
+  Result:         pass
+  Rule:           require-namespace
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'autogen-validate-livenessProbe-readinessProbe' passed.
+  Policy:     require-pod-probes
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           autogen-validate-livenessProbe-readinessProbe
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'check-ips' passed.
+  Policy:     restrict-external-ips
+  Resources:
+    API Version:  v1
+    Kind:         Service
+    Name:         josh-test-svc
+    Namespace:    josh
+    UID:          a0272a57-7e72-419e-8233-541f71c322ea
+  Result:         pass
+  Rule:           check-ips
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'autogen-validate-crio-sock-mount' passed.
+  Policy:     disallow-container-sock-mounts
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           autogen-validate-crio-sock-mount
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Multi-Tenancy
+  Message:    validation rule 'validate-podcontroller-namespace' passed.
+  Policy:     disallow-default-namespace
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           validate-podcontroller-namespace
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation error: The label `app.kubernetes.io/name` is required. Rule autogen-check-for-labels failed at path /spec/template/metadata/labels/app.kubernetes.io/name/
+  Policy:     require-labels
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         fail
+  Rule:           autogen-check-for-labels
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'validate-nodeport' passed.
+  Policy:     restrict-nodeport
+  Resources:
+    API Version:  v1
+    Kind:         Service
+    Name:         josh-test-svc
+    Namespace:    josh
+    UID:          a0272a57-7e72-419e-8233-541f71c322ea
+  Result:         pass
+  Rule:           validate-nodeport
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'autogen-validate-readOnlyRootFilesystem' passed.
+  Policy:     require-ro-rootfs
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           autogen-validate-readOnlyRootFilesystem
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'check-ingress-annotations' passed.
+  Policy:     disallow-ingress-nginx-custom-snippets
+  Resources:
+    API Version:  networking.k8s.io/v1
+    Kind:         Ingress
+    Name:         josh-test-ingress
+    Namespace:    josh
+    UID:          8a6afcf5-cc5d-4973-bebd-873bdbeb5183
+  Result:         pass
+  Rule:           check-ingress-annotations
+  Scored:         true
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Multi-Tenancy
+  Message:    validation rule 'validate-namespace' passed.
+  Policy:     disallow-default-namespace
+  Resources:
+    API Version:  v1
+    Kind:         Pod
+    Name:         josh-test-7656f9876-48vsp
+    Namespace:    josh
+    UID:          c64fbeb3-6f12-4739-93f7-c6acbaf9004c
+  Result:         pass
+  Rule:           validate-namespace
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Best Practices
+  Message:    validation rule 'autogen-validate-docker-sock-mount' passed.
+  Policy:     disallow-container-sock-mounts
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           autogen-validate-docker-sock-mount
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+  Category:   Multi-Tenancy
+  Message:    validation rule 'require-podcontroller-namespace' passed.
+  Policy:     disallow-default-namespace
+  Resources:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         josh-test
+    Namespace:    josh
+    UID:          ea8ea154-fd5f-4865-b8a1-9786c138db70
+  Result:         pass
+  Rule:           require-podcontroller-namespace
+  Scored:         true
+  Severity:       medium
+  Source:         Kyverno
+  Timestamp:
+    Nanos:    0
+    Seconds:  1647512705
+Summary:
+  Error:  0
+  Fail:   1
+  Pass:   17
+  Skip:   0
+  Warn:   0
+Events:   <none>

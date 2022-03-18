@@ -3,7 +3,6 @@ resources:
   # - Prometheus/clusterRole.yaml
   # - Prometheus/config-map.yaml
   # - Prometheus/prometheus-deployment.yaml
-
   # - MetricServer/components.yaml
 
 
@@ -12,5 +11,6 @@ resources:
   - Josh-App/jb-ingress.yaml
   - Josh-App/jb-namespace.yaml
   - Josh-App/jb-hpa.yaml
+  - Josh-App/jb-pdb.yaml
   
   # - Kyverno/kyverno.yaml

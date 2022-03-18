@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
     name: josh-test
     namespace: josh
+    labels:
+        app.kubernetes.io/name: josh
 spec:
     selector:
         matchLabels:
@@ -12,8 +14,19 @@ spec:
         metadata:
             labels:
                 app: josh-test
+                app.kubernetes.io/name: josh
         spec:
             containers:
             -   name: josh-test
                 image: elrosvirtual/josh-test:10
                 imagePullPolicy: Always
+                livenessProbe:
+                    httpGet:
+                        port: 5000
+                readinessProbe:
+                    httpGet:
+                        port: 5000
+                    initialDelaySeconds: 5
+                    periodSeconds: 5
+                securityContext:
+                    readOnlyRootFilesystem: true
